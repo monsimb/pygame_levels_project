@@ -15,6 +15,21 @@ We're excited to see what kind of fun levels, features, and puzzles you all come
 
 ## Level Creation
 
+
+## Files Included
+
+├── levels                       # YOUR level file will go here.
+│   ├── level1.py                    # Example level file
+│   └── lvl_yourinitials.py          # Your level file will go here.
+├── sprites                      # YOUR sprite file will go here.
+│   ├── lvl1_player.png              # Example level file
+│   ├── lvl_yourinitials_player.png  # Your sprites will go here.
+├── config.py                        # Contains consts and configuration info. DON'T TOUCH! Talk to us first if you must <3
+├── level.py                         # 
+├── main.py                          # 
+├── minigame_manager.py              # 
+└── README.md
+
 ### Guidelines
 **Recommendations**
 
