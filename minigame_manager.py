@@ -1,6 +1,7 @@
 # minigame_manager.py
 import pygame
 
+
 class MiniGameManager:
     def __init__(self, levels):
         self.levels = levels

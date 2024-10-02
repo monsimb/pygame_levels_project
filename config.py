@@ -1,4 +1,6 @@
-# config.py
+"""
+File contains constants for our levels project.
+"""
 import pygame # type: ignore
 pygame.init()
 

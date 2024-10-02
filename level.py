@@ -1,6 +1,11 @@
-# level.py
+
+"""
+Contains functions for loading levels, starting sprites, and getting player's starting pos.
+"""
 import importlib.util
 import pygame
+
+from config import TILE, END_RECT
 
 class Level:
     def __init__(self, level_file):
@@ -16,18 +21,19 @@ class Level:
         return level_module.layout, level_module.color_mapping, level_module.sprites
 
     def draw(self, screen):
-        tile_size = 50  # Set tile size to 50x50 for sprites
-        pygame.transform.scale(self.sprites, (50, 50))
+        pygame.transform.scale(self.sprites, (TILE, TILE))
         for y, row in enumerate(self.layout):
             for x, tile in enumerate(row):
                 if tile in self.sprites:
                     # Load the sprite image and scale it to 50x50
                     sprite_image = pygame.image.load(self.sprites[tile]).convert_alpha()
-                    sprite_image = pygame.transform.scale(sprite_image, (tile_size, tile_size))
-                    screen.blit(sprite_image, (x * tile_size, y * tile_size))
+                    sprite_image = pygame.transform.scale(sprite_image, (TILE, TILE))
+                    screen.blit(sprite_image, (x * TILE, y * TILE))
                 elif tile in self.color_mapping:
                     color = self.color_mapping[tile]
                     pygame.draw.rect(screen, color, (x * tile_size, y * tile_size, tile_size, tile_size))
+                    
+        pygame.draw.rect(screen, self.color_mapping['E'], END_RECT)      # DO NOT REMOVE OR CHANGE THIS
 
     def get_player_start_position(self):
         for y, row in enumerate(self.layout):
