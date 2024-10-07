@@ -14,12 +14,22 @@ We're excited to see what kind of fun levels, features, and puzzles you all come
 
 
 ## Level Creation
+For your reference we have one example level, level1.py, so you can see how this framework is used.
+*Your game MUST Start at() and End at()* You can choose to do a plataformer style game or maze style game. Be ware this project is a collaborative effort!
+### Sprites
 
+Feel free to add your own sprites (MUST BE APPROPRIATE)
+Defining you sprite:
+```sprites = {
+    '@': 'sprites/lvl1_player.png',  # Player sprite
+    'E': 'sprites/lvl1_enemy.png',   # Enemy sprite
+}```
 
 ## Files Included
 
 ├── levels                       # YOUR level file will go here.
 │   ├── level1.py                    # Example level file
+|   ├── level_transition_example     # Shows the transition between one level to the other (good for testing!)
 │   └── lvl_yourinitials.py          # Your level file will go here.
 ├── sprites                      # YOUR sprite file will go here.
 │   ├── lvl1_player.png              # Example level file
