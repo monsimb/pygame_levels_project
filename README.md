@@ -11,22 +11,31 @@ We're excited to see what kind of fun levels, features, and puzzles you all come
 
 
 ## Compilation
-
+explaining how we are gonna run, explaining how they should test theirs 
 
 ## Level Creation
 For your reference we have one example level, level1.py, so you can see how this framework is used.
 *Your game MUST Start at() and End at()* You can choose to do a plataformer style game or maze style game. Be ware this project is a collaborative effort!
 ### Sprites
-
 Feel free to add your own sprites (MUST BE APPROPRIATE)
 Defining you sprite:
-```sprites = {
+```
+sprites = {
     '@': 'sprites/lvl1_player.png',  # Player sprite
     'E': 'sprites/lvl1_enemy.png',   # Enemy sprite
-}```
-
+}
+```
+### Level Design
+TBD -> will have to be changed from current
+### Collision
+Collision is handled for you! Just define walls as '#' -> might have to be changed
+```
+Code Snippet
+```
+->from file XXX
+### Movement
+Would like for players to not have to add this to their level -> any way to include it in one of the config files like main?
 ## Files Included
-
 ├── levels                       # YOUR level file will go here.
 │   ├── level1.py                    # Example level file
 |   ├── level_transition_example     # Shows the transition between one level to the other (good for testing!)
@@ -42,9 +51,18 @@ Defining you sprite:
 
 ### Guidelines
 **Recommendations**
+// state again where we need to start and end from
+// clean
+// please submit original work
+// don't alter code from framework aside from adding your level and required files
+// feel free to use other pygame functions, but use the (specify what they need to use so we don't break others submissions
 
 **What NOT To Do**
 
 ### Submissions
+- File naming:
+    - Level must be named: level_YourInitial.py (we can append the number based on the order we want to add them in) exp. level_MS.py
+    - Asset images must be named: <asset>_<YourInitials>.py (replace asset with 'player', 'wall', etc) exp. player_MS.py, wall_MS.py
 
 # Resources
+Pygame wiki
