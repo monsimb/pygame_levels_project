@@ -14,11 +14,15 @@ We're excited to see what kind of fun levels, features, and puzzles you all come
 explaining how we are gonna run, explaining how they should test theirs 
 
 ## Level Creation
-For your reference we have one example level, level1.py, so you can see how this framework is used.
-*Your game MUST Start at() and End at()* You can choose to do a plataformer style game or maze style game. Be ware this project is a collaborative effort!
+For your reference we have one example level, level1.py, so you can see how this framework is used. *Your game MUST Start at() and End at()*
+
+You can choose to do a platformer or maze-style game. However, please keep in mind that this project is a collaborative effort, and do not change anything outside of your level file. If you find that your idea requires you to modify any of the other files, please consult one of our officers!
+
 ### Sprites
-Feel free to add your own sprites (MUST BE APPROPRIATE)
-Defining you sprite:
+Feel free to add your own sprites, but make sure they are **appropriate**. Anything violating UNT's [Code of Student Conduct](https://policy.unt.edu/policy/07-012) will result in your level being thrown out.
+
+**Defining Your Sprite:**
+First, upload your sprites to the sprites folder in the provided framework. Then, using the below code as an example, replace 'lvl1_player.png' with the sprite file name.
 ```
 sprites = {
     '@': 'sprites/lvl1_player.png',  # Player sprite
@@ -27,15 +31,42 @@ sprites = {
 ```
 ### Level Design
 TBD -> will have to be changed from current
+
 ### Collision
-Collision is handled for you! Just define walls as '#' -> might have to be changed
+Collision is handled for you! Just define walls as '#' and the enemy as 'E'. -> might have to be changed
+
+Below is the maze included in our level1.py file. You can use this as a reference as you build your level!
 ```
-Code Snippet
+layout = [
+    "#"*(MAZE_WIDTH+1),
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "# ###"+" "*(MAZE_WIDTH-5)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "# "+" "*(MAZE_WIDTH-7)+"######",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"+" "*(MAZE_WIDTH-1)+"#",
+    "#"*(MAZE_WIDTH)+"#",
+]
 ```
-->from file XXX
 ### Movement
 Would like for players to not have to add this to their level -> any way to include it in one of the config files like main?
+
 ## Files Included
+```
 ├── levels                       # YOUR level file will go here.
 │   ├── level1.py                    # Example level file
 |   ├── level_transition_example     # Shows the transition between one level to the other (good for testing!)
@@ -48,21 +79,29 @@ Would like for players to not have to add this to their level -> any way to incl
 ├── main.py                          # 
 ├── minigame_manager.py              # 
 └── README.md
+```
 
 ### Guidelines
-**Recommendations**
-// state again where we need to start and end from
-// clean
-// please submit original work
-// don't alter code from framework aside from adding your level and required files
-// feel free to use other pygame functions, but use the (specify what they need to use so we don't break others submissions
+We ask that you thoroughly read these guidelines before submission to ensure that your submission meets everything listed below. Depending on when you submit, we may not be able to give you time to fix your submission, and we would hate for it to be left out! If you have any doubts on whether your modifications are okay, ***please ask an officer*** via Discord, Instagram, or E-mail.
 
-**What NOT To Do**
+- As mentioned in the previous sections, your level must *start at () and end at ()*.
+- Make sure your code is clean and readable (don't leave in any commented-out sections, stick to one method of formatting, etc.)
+- Do not submit work that isn't your own. Using external resources as a guide to help you create what you're envisioning is completely okay, but blatant copying will not be tolerated.
+- Do not alter any code outside of your custom level file. It's encouraged to upload and use your own sprites, too, but make sure those files stay in the right folders!
+  - Feel free to use other pygame functions, too, but make sure it stays in your file.
+
+Once again, if you need clarification on what you can or can't do, please reach out to us! We want everyone to be as involved as possible.
 
 ### Submissions
 - File naming:
-    - Level must be named: level_YourInitial.py (we can append the number based on the order we want to add them in) exp. level_MS.py
-    - Asset images must be named: <asset>_<YourInitials>.py (replace asset with 'player', 'wall', etc) exp. player_MS.py, wall_MS.py
+    - Level must be named: level_YourInitial.py
+        - If you're submitting multiple levels, append a number based on the order you would like them to be played.
+        - E.g.: Jane Doe would submit level_JD.py for only one submission. For two, she would submit level_JD1.py and level_JD2.py, where level_JD1.py is played first.
+    - Asset images must be named: <asset>_<YourInitials>.py, where <asset> describes what the sprite is used for (player, wall, etc.)
+        - Again, Jane Doe would have assets player_JD.py, wall_JD.py, and enempy_JD.py
+        - These are optional! If you would like to use our default sprites, just don't upload any images.
 
 # Resources
-Pygame wiki
+Here are some helpful resources you can reference while building your level!
+
+= [PyGame Wiki](https://www.pygame.org/docs/)
