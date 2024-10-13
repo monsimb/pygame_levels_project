@@ -67,7 +67,6 @@ def run_mini_game(screen):
         screen: pygame.display.set_mode(WINDOW_SIZE)
     """
     player = Player(PLAYER_START[0], PLAYER_START[1], sprites['@'])
-    level = Level()
 
     clock = pygame.time.Clock()
     running = True
@@ -100,7 +99,7 @@ def run_mini_game(screen):
 
         # Drawing
         screen.fill((0, 0, 0))  # Clear screen
-        Level.draw(screen)
+        draw_level(screen, layout, sprites, color_mapping)
         player.draw(screen)
         pygame.display.flip()
 
