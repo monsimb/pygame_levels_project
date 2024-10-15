@@ -31,7 +31,7 @@ class Level:
                     screen.blit(sprite_image, (x * TILE, y * TILE))
                 elif tile in self.color_mapping:
                     color = self.color_mapping[tile]
-                    pygame.draw.rect(screen, color, (x * tile_size, y * tile_size, tile_size, tile_size))
+                    pygame.draw.rect(screen, color, (x * TILE, y * TILE, TILE, TILE))
                     
         pygame.draw.rect(screen, self.color_mapping['E'], END_RECT)      # DO NOT REMOVE OR CHANGE THIS
 

@@ -11,28 +11,25 @@ That's why we use the MAZE_WIDTH constant below \/\/\/
 '''
 # layout of your level ' ' = empty, '#' = wall, '@' = player, 'E' = enemy
 layout = [
-    "#"*(MAZE_WIDTH+1),
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "# ###"+" "*(MAZE_WIDTH-5)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "# "+" "*(MAZE_WIDTH-7)+"######",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"+" "*(MAZE_WIDTH-1)+"#",
-    "#"*(MAZE_WIDTH)+"#",
+    "#########################",
+    "#                       #",
+    "#                       #",
+    "######                  #",
+    "#                       #",
+    "#                       #",
+    "#                 #######",
+    "###############         #",
+    "#             #         #",
+    "#             #         #",
+    "#    ##########         #",
+    "#                       #",
+    "#                       #",
+    "#                       #",
+    "#                       #",
+    "#               #########",
+    "#                       #",
+    "#                        ",
+    "#########################"
 ]
 
 
@@ -111,6 +108,7 @@ def draw_level(
         sprites: dict[str, str],
         color_mapping: dict[str, tuple[int, int, int]]
         ):
+    
     for y, row in enumerate(layout):        # y = index, row contains contents of each row
         for x, tile in enumerate(row):      # x = index, tile = character at index (' ', '#', or '@')
             if tile in sprites:     # check if tile is player first
@@ -120,5 +118,6 @@ def draw_level(
             elif tile in color_mapping:     # if not player, apply appropriate color mapping
                 color = color_mapping[tile]
                 pygame.draw.rect(screen, color, (x * TILE, y * TILE, TILE, TILE))
+    pygame.draw.rect(screen, color_mapping['E'], END_RECT)
 
     
